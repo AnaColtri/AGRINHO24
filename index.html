@@ -38,7 +38,7 @@
                 das inúmeras possibilidades que o futuro do campo oferece.
             </p>
         </section>
-        
+
         <div class="posts-container">
             <span></span>
             <div class="post" data-title="Transformando a Forma de Plantar e Colher"
@@ -50,14 +50,15 @@
 
             <div class="post" data-title="Energia Renovável"
                 data-content="Fazendas modernas estão adotando energia solar e eólica para reduzir custos e minimizar o impacto ambiental. Painéis solares e turbinas eólicas estão se tornando comuns, fornecendo energia limpa e sustentável. Além de economizar dinheiro, essas tecnologias também ajudam a proteger o meio ambiente para as futuras gerações."
-                data-img="img/fazenda_solar.webp">
+                data-img="img/fazenda_solar.webp" data-credit="https://www.aldo.com.br/blog/fazenda-solar/">
                 <img src="img/fazenda_solar.webp" alt="paineis solares">
                 <h2>Energia Renovável</h2>
             </div>
 
             <div class="post" data-title="Práticas Sustentáveis"
                 data-content="A tecnologia está ajudando a agricultura a ser mais sustentável. Sistemas de irrigação inteligentes economizam água, aplicando a quantidade exata necessária às plantas. Isso não só conserva recursos, mas também melhora a saúde das culturas, resultando em colheitas mais robustas e um uso mais responsável dos recursos naturais."
-                data-img="img/sistema-de-irrigação.jpg">
+                data-img="img/sistema-de-irrigação.jpg"
+                data-credit="https://digitalagro.com.br/2020/09/02/gestao-da-agua-na-agricultura/">
                 <img src="img/sistema-de-irrigação.jpg" alt="sistema de irrigação">
                 <h2>Práticas Sustentáveis</h2>
             </div>
@@ -66,21 +67,24 @@
             <span></span>
             <div class="post" data-title="Economia Circular no Agro"
                 data-content="Na economia circular, nada se perde. Resíduos agrícolas são transformados em recursos valiosos, como compostagem e biogás, que podem ser reutilizados na própria fazenda. Isso reduz o desperdício e cria um ciclo sustentável, onde o que antes era descartado agora ajuda a alimentar a produção agrícola."
-                data-img="img/compostagem.webp">
+                data-img="img/compostagem.webp"
+                data-credit="https://alavoura.com.br/agricultura/adubos-e-fertilizantes/o-que-e-compostagem-e-como-fazer-em-casa/">
                 <img src="img/compostagem.webp" alt="compostagem">
                 <h2>Economia Circular no Agro</h2>
             </div>
 
             <div class="post" data-title="Novas Tecnologias para Conservação de Recursos"
                 data-content="Inovações tecnológicas estão desempenhando um papel crucial na preservação de solos e recursos hídricos. Técnicas como o plantio direto evitam a erosão do solo, mantendo-o fértil e produtivo. Além disso, sistemas de monitoramento ajudam os agricultores a usar água de forma mais eficiente, garantindo que esse recurso vital seja preservado."
-                data-img="img/plantio-direto.jpg">
+                data-img="img/plantio-direto.jpg"
+                data-credit="https://blog.sensix.ag/historia-do-plantio-direto-no-brasil/">
                 <img src="img/plantio-direto.jpg" alt="plantio direto">
                 <h2>Novas Tecnologias para Conservação de Recursos</h2>
             </div>
 
             <div class="post" data-title="Inovações em Biotecnologia"
                 data-content="A biotecnologia está criando novas culturas que são mais resistentes a pragas e condições climáticas adversas. Isso significa menos uso de pesticidas e menos perdas para os agricultores, além de um menor impacto ambiental. Essas inovações estão ajudando a garantir a segurança alimentar e a sustentabilidade a longo prazo."
-                data-img="img/cientista-manipulando-planta.webp">
+                data-img="img/cientista-manipulando-planta.webp"
+                data-credit="https://terramagna.com.br/blog/biotecnologia-entenda-a-importancia-para-a-agricultura/">
                 <img src="img/cientista-manipulando-planta.webp" alt="cientista manipulando planta">
                 <h2>Inovações em Biotecnologia</h2>
             </div>
@@ -123,6 +127,7 @@
             <span class="close">&times;</span>
             <div class="modal-image">
                 <img src="" alt="Modal Image">
+                <p class="image-credits"></p>
             </div>
             <div class="modal-text">
                 <h2 id="modal-title"></h2>
@@ -137,6 +142,7 @@
         const modalTitle = document.getElementById('modal-title');
         const modalContent = document.getElementById('modal-content');
         const modalImage = document.querySelector('.modal-image img');
+        const modalCredit = document.querySelector('.image-credits');
         const closeModal = document.querySelectorAll('.close');
         const sobreMimBtn = document.getElementById('sobre-mim-btn');
         const modalSobreMim = document.getElementById('modal-sobre-mim');
@@ -173,12 +179,20 @@
                 const title = post.getAttribute('data-title');
                 const content = post.getAttribute('data-content');
                 const img = post.getAttribute('data-img');
+                const credit = post.getAttribute('data-credit');
 
                 modalTitle.textContent = title;
                 modalContent.textContent = content;
                 modalImage.src = img;
                 modal.classList.add('show');
                 modal.style.display = 'flex';
+                if (credit) {
+                    modalCredit.textContent = `Imagem retirada de: ${credit}`;
+                    modalCredit.style.display = 'block';
+                } else {
+                    modalCredit.textContent = ''; 
+                    modalCredit.style.display = 'none';
+                }
             });
         });
 
