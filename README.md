@@ -1,6 +1,8 @@
 # AGRINHO24
 Inovação no Campo
+ 
  - VISÃO GERAL
+
 "Inovação no Campo" é um site dedicado a explorar e promover tecnologias e oportunidades no meio rural, especialmente voltadas para os jovens, tanto em áreas rurais quanto urbanas. O site também está relacionado ao projeto Agrinho 2024, incentivando a participação e o desenvolvimento de habilidades tecnológicas.
 
 - SITE INFORMATIVO.
